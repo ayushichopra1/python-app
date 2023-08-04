@@ -151,5 +151,10 @@ def question_answering():
 
     return jsonify({'answer': answer})
 
+@app.route('/')
+def hello_world():
+    return 'welcome to flask app'
+
+
 if __name__ == '__main__':
     app.run(debug=True,port=8000)

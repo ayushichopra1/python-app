@@ -1,4 +1,8 @@
-flask==2.3.2
-langchain==0.0.240   
-faiss-cpu==1.7.4 
-openai==0.27.8 
+faiss-cpu==1.7.4
+Flask==2.3.2
+gunicorn==21.2.0
+langchain==0.0.240
+openai==0.27.8
+python-docx==0.8.11
+python-dotenv==1.0.0
+
