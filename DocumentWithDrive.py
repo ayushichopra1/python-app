@@ -144,7 +144,14 @@ def question_answering():
     doc_path = data.get('doc_path')
     query = data.get('query')
 
-    doc = Document(doc_path)
+    temp_dir = os.path.join(os.getcwd(), 'temp')
+    os.makedirs(temp_dir, exist_ok=True)
+    filename='temp.docx'
+    output_file = os.path.join(temp_dir, filename)
+    print(output_file)
+    download_file_from_google_drive(doc_path, output_file)
+
+    doc = Document(output_file)
     raw_text = "\n".join([paragraph.text for paragraph in doc.paragraphs])
     text_splitter = CharacterTextSplitter(
         separator="\n",
